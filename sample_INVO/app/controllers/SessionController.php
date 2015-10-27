@@ -10,7 +10,7 @@ class SessionController extends \Phalcon\Mvc\Controller {
 	private function _registerSession($user) {
 		$this->session->set ( 'auth', array (
 				'id' => $user->id,
-				'name' => $user->name 
+				'name' => $user->first_name 
 		) );
 	}
 	/**

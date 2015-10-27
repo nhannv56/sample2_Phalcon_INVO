@@ -12,6 +12,7 @@ use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Flash\Session as FlashSession;
+use Phalcon\Events\Manager as EventsManager;
 /**
  *
  * @var FactoryDefault
@@ -87,7 +88,17 @@ $di->setShared ( 'session', function () {
  * register dispatcher
  */
 $di->setShared ( 'dispatcher', function () {
+	
+	//create an events manager
+	$eventsManager = new EventsManager();
+	
+	//listen for events produced in dispatcher using sercurityplugin
+	$eventsManager->attach('dispatch:beforeExecuteRoute', new SercurityPlugin());
+	
+	$eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
+	
 	$dispatcher = new Dispatcher ();
+	$dispatcher->setEventsManager($eventsManager);
 	return $dispatcher;
 } );
 /**
