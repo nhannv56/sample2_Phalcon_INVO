@@ -1,4 +1,4 @@
 <div class="page-header">
-    <h1>Index page</h1>
+    <h1>Invoices page</h1>
 </div>
 {{flash.output()}}<br/>

@@ -57,6 +57,14 @@ class SercurityPlugin extends Plugin {
 			}
 			// private resource area
 			$privateResources = array (
+					'users' => array (
+							'index',
+							'search',
+							'new',
+							'edit',
+							'create',
+							'delete'
+					),
 					'companies' => array (
 							'index',
 							'search',

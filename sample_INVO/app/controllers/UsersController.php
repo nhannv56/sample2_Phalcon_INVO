@@ -7,7 +7,7 @@ class UsersController extends ControllerBase {
 	 * Index action
 	 */
 	public function indexAction() {
-		$this->persistent->parameters = null;
+		
 	}
 	
 	/**
