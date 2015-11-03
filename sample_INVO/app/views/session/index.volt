@@ -1,4 +1,4 @@
-{{flashSession.output()}}
+{{flash.output()}}
 {{form('start')}}
 	<fieldset>
 		<div>

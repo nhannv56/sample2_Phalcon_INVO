@@ -28,7 +28,6 @@ class SercurityPlugin extends Plugin {
 		$acl = $this->getAcl ();
 		$allowed = $acl->isAllowed ( $role, $controller, $action );
 		if ($allowed != Acl::ALLOW) {
-			$this->flash->error ( "You don't have access to this module" );
 			$dispatcher->forward ( array (
 					'controller' => 'index',
 					'action' => 'index' 
@@ -60,10 +59,8 @@ class SercurityPlugin extends Plugin {
 					'users' => array (
 							'index',
 							'search',
-							'new',
 							'edit',
-							'create',
-							'delete'
+							'delete' 
 					),
 					'companies' => array (
 							'index',
@@ -109,13 +106,18 @@ class SercurityPlugin extends Plugin {
 							'index' 
 					),
 					'register' => array (
-							'index' 
+							'index',
+							'regis'
 					),
 					'session' => array (
 							'index',
 							'register',
 							'start',
 							'end' 
+					),
+					'users' => array (
+							'create',
+							'new' 
 					) 
 			);
 			// add public area
