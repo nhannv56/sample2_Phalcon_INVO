@@ -89,25 +89,30 @@ $di->setShared ( 'session', function () {
  */
 $di->setShared ( 'dispatcher', function () {
 	
-	//create an events manager
-	$eventsManager = new EventsManager();
+	// create an events manager
+	$eventsManager = new EventsManager ();
 	
-	//listen for events produced in dispatcher using sercurityplugin
-	$eventsManager->attach('dispatch:beforeExecuteRoute', new SercurityPlugin());
+	// listen for events produced in dispatcher using sercurityplugin
+	$eventsManager->attach ( 'dispatch:beforeExecuteRoute', new SercurityPlugin () );
 	
-	$eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
+	$eventsManager->attach ( 'dispatch:beforeException', new NotFoundPlugin () );
 	
 	$dispatcher = new Dispatcher ();
-	$dispatcher->setEventsManager($eventsManager);
+	$dispatcher->setEventsManager ( $eventsManager );
 	return $dispatcher;
 } );
 /**
  * register flash
  */
 $di->setShared ( 'flash', function () {
-	return new FlashSession();
+	return new FlashSession ();
 } );
-		
+/**
+ * Register to use component
+ */
+$di->setShared ( 'elements', function () {
+	return new Elements ();
+} );
 		
 		
 		

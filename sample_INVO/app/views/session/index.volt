@@ -6,7 +6,7 @@
 			<div>
 				{{text_field('email')}}
 			</div>
-		</div
+		</div>
 		<div>
 			<label for="password">Password</label>
 			<div>

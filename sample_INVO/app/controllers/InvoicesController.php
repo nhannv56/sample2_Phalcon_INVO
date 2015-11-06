@@ -1,12 +1,10 @@
 <?php
 
-class InvoicesController extends \Phalcon\Mvc\Controller
+class InvoicesController extends ControllerBase
 {
-
     public function indexAction()
     {
 
     }
-
 }
 

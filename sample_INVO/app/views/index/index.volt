@@ -1,4 +1,5 @@
 <div class="page-header">
+{{flash.output()}}
 {{content()}}
     <h1>Index page</h1>
 </div>

@@ -27,11 +27,14 @@ class SercurityPlugin extends Plugin {
 		// get acl list
 		$acl = $this->getAcl ();
 		$allowed = $acl->isAllowed ( $role, $controller, $action );
+		
 		if ($allowed != Acl::ALLOW) {
-			$dispatcher->forward ( array (
+			$this->flashSession->error("You haven't permission to access this");
+			return $dispatcher->forward ( array (
 					'controller' => 'index',
 					'action' => 'index' 
 			) );
+			
 			return false;
 		}
 	}
@@ -107,7 +110,7 @@ class SercurityPlugin extends Plugin {
 					),
 					'register' => array (
 							'index',
-							'regis'
+							'regis' 
 					),
 					'session' => array (
 							'index',
