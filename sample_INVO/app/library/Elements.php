@@ -79,12 +79,11 @@ class Elements extends Component {
 		} else { // not login
 			unset ( $this->_headerMenu ['navbar-left'] ['invoices'] );
 		}
-		
 		$controllerName = $this->view->getControllerName ();
 		
 		foreach ( $this->_headerMenu as $position => $menu ) {
 			echo '<div class="nav-collapse">';
-			echo '<ul class="nav navbar-nav', $position, '">';
+			echo '<ul class="nav navbar-nav ', $position, ' ">';
 			foreach ( $menu as $controller => $option ) {
 				if ($controllerName == $controller) {
 					echo '<li class="active">';
