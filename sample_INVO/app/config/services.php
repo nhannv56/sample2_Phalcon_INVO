@@ -111,7 +111,7 @@ $di->setShared ( 'flash', function () {
  * Register to use component
  */
 $di->setShared ( 'elements', function () {
-	return new Elements ();
+	return new Elements();
 } );
 		
 		
