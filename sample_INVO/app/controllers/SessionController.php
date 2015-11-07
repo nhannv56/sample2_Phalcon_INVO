@@ -1,5 +1,9 @@
 <?php
-class SessionController extends \Phalcon\Mvc\Controller {
+class SessionController extends ControllerBase {
+	public function initialize() {
+		$this->tag->setTitle ( "Login" );
+		parent::initialize ();
+	}
 	public function indexAction() {
 	}
 	/**

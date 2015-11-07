@@ -14,7 +14,7 @@ class ControllerBase extends Controller {
 		$this->tag->prependTitle ( 'INVO| ' );
 		
 		// set up a layout
-		// $this->view->setTemplateAfter ( 'main' );
+		 $this->view->setTemplateAfter ( 'main' );
 	}
 	/**
 	 * forward user to a controller/action/
